@@ -1643,7 +1643,7 @@ action: () => {
       }
   }
 // Переменные состояния
-let currentBlock = 'hundredthreetysix'; // тут переключать главу
+let currentBlock = 'one'; // тут переключать главу
 let lives = 7;
 // Запреты на повтор действий
 let statushundredsixteen = false;
