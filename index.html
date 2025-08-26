@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Перевал Бури</title>
+<link rel="stylesheet" href="./styles/style.css">
+<script type="module" src="./scripts/texts.js" defer></script>
+<script type="module" src="./scripts/script.js" defer></script>
+</head>
+<body>
+  <header>
+    
+  </header>
+  <main class="game" id="game">
+    <p class="story" id="story"></p>
+    <div class="choices" id="choices"></div>
+    <section>
+      <h2>Лист персонажа</h2>
+      <div>
+        <h3>Характеристики персонажа</h3>
+        <p>Сила:<span id="strength"></span></p>
+        <p>Ловкость:<span id="dexterity"></span></p>
+        <p>Телосложение:<span id="constitution"></span></p>
+        <p>Ителлект:<span id="intelligence"></span></p>
+        <p>Мудрость:<span id="wisdom"></span></p>
+        <p>Хариза:<span id="charisma"></span></p>
+      </div>
+    <div>
+    HP: <span class="status" id="livesCount"></span>
+    <button class="restoreBtn" id="restoreBtn">Попросить Родерика вылечить</button>
+    <button class="restoreSixBtn" id="restoreSixBtn">Выпить зелье</button>
+</div>
+<div id="equipment-container">
+  <h3>Ваше снаряжение:</h3>
+  <div id="equipment"></div>
+  <div id="gold"></div>
+</div>
+    </section>
+  </main>
+  <footer>
+  </footer>
+</body>
+</html>

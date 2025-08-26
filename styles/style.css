@@ -1,0 +1,43 @@
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+  .game {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .story {
+    margin-bottom: 20px;
+  }
+  .block {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+  }
+  .choice {
+    display: block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #c0c0c0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+  }
+  .status {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+.restoreBtn {
+    display: none;
+  }
+
+.restoreSixBtn {
+    display: none;
+  }
