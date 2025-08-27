@@ -130,7 +130,7 @@ ten: {
   },
 
   healtext: {
-    text: '<em>Теперь находясь внебоя вы можете принять исцеление Родерика, нажав на кнопку «Восстановить HP».</em>',
+    text: '<em>Теперь находясь вне боя вы можете принять исцеление Родерика, нажав на кнопку.</em>',
     choices: [ {text: "Дальше", next: "fourteencont"}]
   },
 
@@ -1640,6 +1640,151 @@ action: () => {
       }
 
         }]
+      },
+
+      hundredfourtythree: {
+        text: texts.hundredfourtythree
+      },
+      
+      hundredfourtyfour: {
+        text: texts.hundredfourtythree,
+        choices: [{text: "Вернуться в бой",
+          action: () => {
+        roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - (roll-2); // результат атаки
+          if (resultAttack <= 2) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredfourtyfive';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredthreetynine';
+          }
+          render();
+        });
+      }
+        },
+      
+      {text: "Продолжить бежать", next: "hundredfourtysix"}]
+      },
+
+      hundredfourtyfive: {
+        text: texts.hundredfourtyfive,
+        choices: [{text: "Дальше", next: "hundredfourtyseven"}]
+      },
+
+      hundredfourtysix: {
+        text: texts.hundredfourtyfive
+      },
+
+      hundredfourtyseven: {
+        text: texts.hundredfourtyseven,
+        choices:[{
+          text: "Дальше", next: "hundredfourtyeight"
+        }]
+      },
+
+      hundredfourtyeight: {
+        text: texts.hundredfourtyeight,
+        choices: [{
+          text: "Подняться наверх и посмотреть", next: "hundredfourtynine"},
+          {text: "Подождать", next: "hundredfifty"}
+        ]
+      },
+
+      hundredfourtynine: {
+        text: texts.hundredfourtynine,
+        choices: [
+          { text: "Вы чувствуете странный запах! Совершайте спасбросок!",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultSave = roll; // результат спасброска
+          if (resultSave <= turntostonesave) {
+            currentBlock='hundredfiftyone';
+          } else {
+            alert(`Значение вашего броска: ${resultSave}. Это провал!`);
+            currentBlock='hundredfiftytwo';
+          }
+          render();
+        });
+      }
+          }
+        ]
+      },
+
+      hundredfifty: {
+        text: texts.hundredfifty,
+        choices: [{ text: "Вы чувствуете странный запах! Совершайте спасбросок!",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultSave = roll; // результат спасброска
+          if (resultSave <= turntostonesave) {
+            currentBlock='hundredfiftythree';
+          } else {
+            alert(`Значение вашего броска: ${resultSave}. Это провал!`);
+            currentBlock='hundredfiftyfour';
+          }
+          render();
+        });
+      }
+          }]
+      },
+
+      hundredfiftyone: {
+        text: texts.hundredfiftyone,
+        choices: [
+          {text: "Спрятаться обратно", next: "hundredfiftyseven"},
+          {text: "Выбраться наружу и атаковать", next: "hundredfiftysix"}
+        ]
+      },
+
+      hundredfiftytwo: {
+        text: texts.hundredfiftytwo,
+        choices: [{text: "Получить урон!", damage: 6, next: "hundredfiftytwonext"}]
+      },
+
+      hundredfiftytwonext: {
+        text: "Вы серьёзно ранены, но ещё живы!",
+        choices: [
+          {text: "Атаковать существ",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - (roll-2); // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredfiftyeight';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredfiftynine';
+          }
+          render();
+        });
+      }},
+      {text: "Сбежать!", next: "hundredfiftyfive"}
+        ]
+      },
+
+      hundredfiftythree: {
+        text: texts.hundredfiftythree,
+        choices: [
+          {text: "Атаковать дважды!",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          // const resultAttack = 20 - roll; // результат атаки
+          roll20((roll2) => {
+        const resultAttack2 = 20 - roll2; 
+        if (resultAttack <= 6 || resultAttack2 <= 6) {
+            alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
+            currentBlock='seventyfive';
+          } else {
+            alert(`начение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
+            currentBlock='seventysix';
+          }
+          render();
+        });
+        });
+      }
+          }
+        ]
       }
   }
 // Переменные состояния
@@ -1672,6 +1817,7 @@ let hideinshadows = 10;
 let findorremovetraps = 10;
 
 let turntostonesave = 13;
+let poisonordeathray = 13;
 
 // Снаряжение
 let equipment = [];
@@ -1712,7 +1858,7 @@ function removeItemFromEquipment(itemName) {
   }
 }
 
- // Деьги
+ // Деньги
   let gold = 0;
   // Функция денег
   function renderGold() {
