@@ -1772,18 +1772,634 @@ action: () => {
           // const resultAttack = 20 - roll; // результат атаки
           roll20((roll2) => {
         const resultAttack2 = 20 - roll2; 
-        if (resultAttack <= 6 || resultAttack2 <= 6) {
+        if (resultAttack <= 6 || resultAttack2 <= 5) {
             alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
-            currentBlock='seventyfive';
+            currentBlock='hundredsixtyone';
           } else {
             alert(`начение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
-            currentBlock='seventysix';
+            currentBlock='hundredsixtytwo';
           }
           render();
         });
         });
       }
           }
+        ]
+      },
+
+      hundredfiftyfour: {
+        text: texts.hundredfiftyfour,
+        choices: [
+          {text: "Попытаться ударить противника!",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - (roll-2); // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredsixty';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredsixtytwo';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredfiftyfive: {
+        text: texts.hundredfiftyfive,
+        choices: [{
+          text: "Вас разорвали на куски", damage: 20
+        }]
+      },
+
+      hundredfiftysix: {
+        text: texts.hundredfiftysix,
+        choices: [
+          {text: "Ударить монстра!",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredfiftyeight';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredsixtythree';
+          }
+          render();
+        });
+      } }
+        ]
+      },
+
+      hundredfiftyseven: {
+        text: texts.hundredfiftyseven,
+        choices: [
+          {text: "Атаковать дважды!",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          // const resultAttack = 20 - roll; // результат атаки
+          roll20((roll2) => {
+        const resultAttack2 = 20 - roll2; 
+        if (resultAttack <= 6 || resultAttack2 <= 5) {
+            alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
+            currentBlock='hundredsixtyone';
+          } else {
+            alert(`начение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
+            currentBlock='hundredsixtytwo';
+          }
+          render();
+        });
+        });
+      }
+          }
+        ]
+      },
+
+      hundredfiftyeight: {
+        text: texts.hundredfiftyeight,
+        choices: [
+          {text: "Ударить снова",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredsixtyfour';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredsixtyfive';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredfiftynine: {
+        text: texts.hundredfiftynine,
+        choices: [{text: "Получить урон", damage: 7, next: "hundredfiftyninenext"}]
+      },
+
+      hundredfiftyninenext: {
+        text: "Вы ели стоите на ногах, но способны атаковать в ответ!",
+        choices: [
+          {text: "Нанести атаку",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredfiftyeight';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredsixtyfive';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredsixty: {
+        text: texts.hundredsixty,
+        choices: [
+          {text: "Ударить существо",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredsixtyone';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredsixtytwo';
+          }
+          render();
+        });
+      }
+          }
+        ]
+      },
+
+      hundredsixtyone: {
+        text: texts.hundredsixtyone,
+        choices: [
+          {text: "Атаковать монстра",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredsixtyseven';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredsixtyeight';
+          }
+          render();
+        });
+      }
+          }
+        ]
+      },
+
+      hundredsixtytwo: {
+        text: texts.hundredsixtytwo,
+        choices: [
+          {text: "Нанести удар",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredsixtynine';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventy';
+          }
+          render();
+        });
+      }
+          }
+        ]
+      },
+
+      hundredsixtythree: {
+        text: texts.hundredsixtythree,
+        choices: [{text: "Ударить снова",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventyone';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventytwo';
+          }
+          render();
+        });
+      }
+        }]
+      },
+
+      hundredsixtyfour: {
+        text: texts.hundredsixtyfour,
+        choices: [
+          {text: "Замахнуться на монстра",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventyone';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventytwo';
+          }
+          render();
+        });
+      }
+          }
+        ]
+      },
+
+      hundredsixtyfive: {
+        text: texts.hundredsixtyfive,
+        choices: [{text: "Когти рвут кожу на вашей спине", damage: 5, next: "hundredsixtyfivenext"}]
+      },
+
+      hundredsixtyfivenext:{
+        text: texts.hundredsixtyfivenext,
+        choices: [{text: "Ударить,пока есть возможность",
+          action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventyone';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventytwo';
+          }
+          render();
+        });
+      }
+        }]
+      },
+
+      hundredsixtysix: {
+        text: texts.hundredsixtysix,
+        choices: [{text: "Остаться сражаться", next: "hundredseventyfive"},
+        {text: "прыгнуть в яму", next: "hundredfivetyseven"}
+        ]
+      },
+
+      hundredsixtyseven: {
+        text: texts.hundredsixtyseven,
+        choices: [
+          {text: "Дальше", next: "hundredeighty"}
+        ]
+      },
+
+      hundredsixtyeight: {
+        text: texts.hundredsixtyeight,
+        choices: [
+          {text: "Атаковать монстра",
+             action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventysix';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventyseven';
+          }
+          render();
+        });
+      }
+          }
+        ]
+      },
+
+      hundredsixtynine: {
+        text: texts.hundredsixtynine,
+        choices: [{
+          text: "Получить урон", damage: 5, next: "hundredsixtyninenexet"
+        }]
+      },
+
+      hundredsixtyninenexet: {
+        text: "Вы ранены, но можете ударить чудовище в ответ!",
+        choices: [
+          {text: "Совершить атаку",
+           action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventysix';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventyseven';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredseventy: {
+        text: texts.hundredseventy,
+        choices: [
+          {text: "Получить урон", damage: 2, next: "hundredseventynext"}
+        ]
+      },
+
+      hundredseventynext: {
+        text: "Вы замечаете возможность для контратаки",
+        choices: [
+          {text: "Совершить атаку",
+           action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventysix';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventyseven';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredseventyone: {
+        text: texts.hundredseventyone,
+        choices: [{text: "Дальше", next: "hundredeighty"}]
+      },
+
+      hundredseventytwo: {
+        text: texts.hundredseventytwo,
+        choices: [
+          {text: "Атаковать в спину",
+           action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - (roll+4); // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventythree';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventyfour';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredseventythree: {
+        text: texts.hundredseventythree,
+        choices: [{text: "Дальше", next: "hundredeighty"}]
+      },
+
+            hundredseventyfour: {
+        text: texts.hundredseventyfour,
+        choices: [
+          {text: "Атаковать чудовище",
+           action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredseventyeight';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredseventynine';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredseventyfive: {
+        text: texts.hundredseventyfive
+      },
+
+      hundredseventysix: {
+        text: texts.hundredseventysix,
+        choices: [{text: "Дальше", next: "hundredeighty"}]
+      },
+
+        hundredseventyseven: {
+        text: texts.hundredseventyseven,
+        choices: [{text: "Дальше", next: "hundredeighty"}]
+      },
+
+      hundredseventyeight: {
+        text: texts.hundredseventyeight,
+        choices: [{text: "Дальше", next: "hundredeighty"}]
+      },
+
+      hundredseventynine: {
+        text: texts.hundredseventynine,
+        choices: [{text: "Получить урон", next: "hundredseventyninenext"}]
+      },
+
+      hundredseventyninenext: {
+        text: texts.hundredseventyninenext,
+        choices: [{text: "Дальше", next: "hundredeighty"}]
+      },
+
+      hundredeighty: {
+        text: texts.hundredeighty
+      },
+
+      hundredeightyone: {
+        text: texts.hundredeightyone,
+        choices: [
+          {text: "Прокрасться в комнату и устроить отвлекающий манёвр",
+             action: () => {
+        roll100((roll) => { // 'roll' — это значение d100
+          const resultSkillCheck = roll; // результат атаки
+          if (resultSkillCheck <=movesilently ) {
+            alert(`Значение вашего броска: ${resultSkillCheck}. Это успех!`);
+            currentBlock='hundredninetyeight';
+          } else {
+            alert(`Значение вашего броска: ${resultSkillCheck}. Это провал!`);
+            currentBlock='hundredninetynine';
+          }
+          render();
+        })
+      }
+          },
+          {text: "Возглавить атаку", next: "hundredninetyseven"},
+          {text: "Спросить Саламдроса, что делать", next: "hundredninetysix"}
+        ]
+      },
+
+      hundredeightytwo: {
+        text: texts.hundredeightytwo,
+        choices: [
+          {text: "Согласиться служить Хозяину", next: "hundredeightyfour"},
+          {text: "Отказаться служить Хозяину", next: "hundredeightythree"}
+        ]
+      },
+
+      hundredeightythree: {
+        text: texts.hundredeightythree
+      },
+
+      hundredeightyfour: {
+        text: texts.hundredeightythree,
+        choices: [
+          {text: "Атаковать Родерика и Саламдроса", next: "hundredeightysix"},
+          {text: "Атаковать Хозяина", next: "hundredeightyfive"}
+        ]
+      },
+
+      hundredeightyfive: {
+        text: texts.hundredeightyfive,
+        choices: [
+          {text: "Дальше", next: "hundredninety"}
+        ]
+      },
+
+      hundredeightysix:  {
+        text: texts.hundredeightysix,
+        choices: [
+          {text: "Совершить атаку",
+           action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 8) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='hundredeightyseven';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='hundredeightyeight';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredeightyseven: {
+        text: texts.hundredeightyseven,
+        choices: [{text: "Дальше", next: "hundredeightynine"}]
+      },
+
+      hundredeightyeight: {
+        text: texts.hundredeightyeight,
+        choices: [{text: "Дальше", next: "hundredeightynine"}]
+      },
+
+      hundredeightynine: {
+        text: texts.hundredeightynine
+      },
+
+      hundredninety: {
+        text: texts.hundredninety,
+        choices: [{text: "Бросить d20, чтобы определить свою судьбу",
+          action: () => {
+  roll20((roll) => { // 'roll' — это значение d20
+    let page;
+    if (roll >= 1 && roll <= 3) {
+      page = 'hundredninetyone';
+    } else if (roll >= 4 && roll <= 10) {
+      page = 'hundredninetytwo';
+    } else if (roll >= 11 && roll <= 20) {
+      page = 'hundredninetythree';
+    }
+    alert(`Вы бросили ${roll}.`);
+    // Можно установить currentBlock или выполнить другие действия
+    // например:
+    currentBlock = `${page}`;
+    render();
+  });
+}
+        }]
+      },
+
+      hundredninetyone: {
+        text: texts.hundredninetyone,
+        choices: [{text: "Дальше",
+          action: () => {
+            addItemToEquipment("Эльфийский плащ");
+            addItemToEquipment("Эльфийские сапоги");
+            currentBlock ='hundredninetyfour';
+            render();
+          }
+        }]
+      },
+
+            hundredninetytwo: {
+        text: texts.hundredninetytwo,
+        choices: [{text: "Дальше",
+          action: () => {
+            addItemToEquipment("Моток верёвки");
+            currentBlock ='hundredninetyfour';
+            render();
+          }
+        }]
+      },
+            hundredninetythree: {
+        text: texts.hundredninetythree,
+        choices: [{text: "Дальше",
+          action: () => {
+            addItemToEquipment("Волшебный меч +1");
+            currentBlock ='hundredninetyfour';
+            render();
+          }
+        }]
+      },
+
+      hundredninetyfour: {
+        text: texts.hundredninetyfour
+      },
+
+      hundredninetysix: {
+        text: texts.hundredninetysix,
+        choices: [
+          {text: "Следовать за ним",next: "hundredninetyseven"}
+        ]
+      },
+
+      hundredninetyseven: {
+        text: texts.hundredninetyseven,
+        choices: [
+          {text: "Атаковать одно из существ",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 6) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='twohundred';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='twohundredone';
+          }
+          render();
+        });
+      } 
+          }
+        ]
+      },
+
+      hundredninetyeight: {
+        text: texts.hundredninetyeight,
+        choice: [{text: "Забрать себе всё", 
+          action: () =>{
+            addItemToEquipment("Драгоценный камень");
+            addItemToEquipment("Драгоценный камень");
+            addItemToEquipment("Драгоценный камень");
+            currentBlock='hundredninetyeightnext';
+            render();
+          }
+        }]
+      },
+
+      hundredninetyeightnext: {
+        text: "Что делать с кольцом?",
+        choices: [
+          {text: "Надеть сейчас", next: "twohundredtwo"},
+          {text: "Взять, но не надевать", next: "twohundredthree"}
         ]
       }
   }
