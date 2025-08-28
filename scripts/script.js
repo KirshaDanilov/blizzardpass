@@ -872,6 +872,13 @@ eightyone: {
   ]
 },
 
+eightytwo: {
+  text: texts.eightytwo,
+  choices: [{text: "Продолжать прятаться",  next: "eightysix"},
+    {text: "Попытаться сменить место", next: "eightyfive"}
+  ]
+},
+
       eightyfive: {
         text:texts.eightyfive,
         choices: [{text: "Двинуться вперёд", next: "eightynine"},
