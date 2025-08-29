@@ -130,7 +130,7 @@ ten: {
   },
 
   healtext: {
-    text: '<em>Теперь находясь вне боя вы можете принять исцеление Родерика, нажав на кнопку.</em>',
+    text: '<em>Теперь находясь вне боя вы можете принять исцеление Родерика, нажав на кнопку «Попросить Родерика вылечить».</em>',
     choices: [ {text: "Дальше", next: "fourteencont"}]
   },
 
@@ -967,7 +967,15 @@ eightythree: {
       eightynine: {
         text: texts.eightynine,
         choices: [{text: "Провести группу внутрь", next: "ninetyfive"},
-        {text: "Вернуться в комнату с клеткой", next:  "hundred"}
+        {text: "Вернуться в комнату с клеткой", next:  "hundred"},
+        {text: "Попросить Родерика исцелить",
+          condition: () => !statusheal,
+          action: () => {
+            statusheal = true;
+            rollRestore();
+            render();
+          }
+        }
           ]
     },
     ninety: {
@@ -1144,7 +1152,7 @@ eightythree: {
 
       hundred:  {
         text: texts.hundred,
-        choices: [{text: "Дальше", next: "nintyfive"}]
+        choices: [{text: "Дальше", next: "ninetyfive"}]
       },
 
       hundredone: {
@@ -3826,7 +3834,7 @@ choices: [{
           text: texts.threehundredeight
         },
 
-        hreehundrednine: {
+        threehundrednine: {
           text: texts.threehundrednine
         }
 
@@ -3834,13 +3842,14 @@ choices: [{
 
 
 // Переменные состояния
-let currentBlock = 'eightynine'; // тут переключать главу
-let lives = 5;
+let currentBlock = 'one'; // тут переключать главу
+let lives = 7;
 // Запреты на повтор действий
 let statushundredsixteen = false;
 let statushundredeight = false;
 let statushundredten = false;
 let statustwohundredthirtyone = false;
+let statusheal = true;
 
 
 // Хар-ки персонажа
@@ -3983,7 +3992,7 @@ for (let choice of availableChoices) {
    document.getElementById('livesCount').innerText = `${lives}`;
 
     const restoreBtn = document.getElementById('restoreBtn');
-  if (restoreScenes.includes(currentBlock)) {
+  if (restoreScenes.includes(currentBlock) && statusheal === true) {
     restoreBtn.style.display = 'block';
   } else {
     restoreBtn.style.display = 'none';
@@ -4028,7 +4037,26 @@ function restoreLives() {
 }
 
 const restoreScenes = ['healtext', 'fourteencont', 'fiveteen', 'sixteen',
-  'twentyfive']; // главы, в которых работает исцеление
+  'seventeen', 'nineteen',
+  'twenty', 'twentyfour', 'twentyfive', 'twentysix',
+'twentyseven', 'twentyeight', 'thirtyone', 'thirtytwosword', 'thirtytwo',
+'thirtytwonext', 'thirtythree', 'thirtyfour',
+'thirtyfive', 'thirtyseven', 'fourtytwoknife', 'fourtythree',
+'fourtyeight', 'fourtyeightnext', 'fifty', 'fiftyfour', 'fiftyseven', 'fiftynine',
+'sixty', 'sixtyone', 'sixtytwo', 'sixtythree', 'sixtyfour',
+'sixtysix', 'sixtyeight', 'sixtynine', 'seventy', 'seventyone',
+'seventysix', 'seventysixsword', 'seventyseven', 'seventyeight',
+'eightynine', 'ninetytwo', 'ninetysix', 'ninetyseven',
+'hundred', 'hundredone', 'hundredtwo', 'hundredfour',
+'hundredseven', 'hundredsevennext', 'hundredeight', 'hundredeightnext',
+'hundredten', 'hundredeleven', 'hundredthreeteen', 'hundredfourteen',
+'hundredfiveteen', 'hundredsixteen', 'hundredtwentyone', 'hundredtwentyfour', 'hundredtwentyfive',
+'hundredtwentyseven', 'hundredtwentyeight', 'hundredthreety', 'hundredthreetyone',
+'hundredfourtyfive', 'hundredfourtyseven', 'hundredfourtyeight', 'hundredsixtyseven',
+'hundredseventyone', 'hundredseventythree', 'hundredseventysix', 'hundredseventyseven',
+'hundredseventyeight', 'hundredseventynine', 'hundredeightyone', 'hundredninetysix', 'twohundredtwo',
+'twohundredthree', 'twohundredseventeen', 'twohundredtwentyone', 'twohundredtwentyonenext', 'twohundredtwentytwo', 'twohundredtwentytwonext', 'twohundredtwentythree',
+'twohundredtwentyseven', 'twohundredtwentynine']; // главы, в которых работает исцеление
 
 function rollRestore() {
   const rollRest = Math.floor(Math.random() * 8) + 1; // d8
@@ -4036,9 +4064,9 @@ function rollRestore() {
   lives += total;
   lives = Math.min(lives, 7);
   alert(`Вы восстановили ${total} HP!`);
+  statusheal = false;
   updateLivesDisplay();
-  document.getElementById('restoreBtn').style.display = 'none'; // Спрячем кнопку после восстановления
-  updateStatusAndButton();
+  
 }
 
 document.getElementById('restoreSixBtn').addEventListener('click', () => {
@@ -4061,6 +4089,7 @@ function showRestoreButton() {
 
 document.getElementById('restoreBtn').addEventListener('click', () => {
   rollRestore();
+  restoreBtn.style.display = 'none';
 });
 
 // Бросок d6
