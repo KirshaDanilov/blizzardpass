@@ -966,8 +966,7 @@ eightythree: {
 
       eightynine: {
         text: texts.eightynine,
-        choices: [{
-          text: "Провести группу внутрь", next: "ninetyfive"},
+        choices: [{text: "Провести группу внутрь", next: "ninetyfive"},
         {text: "Вернуться в комнату с клеткой", next:  "hundred"}
           ]
     },
@@ -1080,7 +1079,7 @@ eightythree: {
         }]
       },
 
-      nintyfive: {
+      ninetyfive: {
         text: texts.ninetyfive,
         choices: [{text: "Это засада!", damage: 2, next: "nintyfivenext"}]
       },
@@ -3835,7 +3834,7 @@ choices: [{
 
 
 // Переменные состояния
-let currentBlock = 'one'; // тут переключать главу
+let currentBlock = 'eightynine'; // тут переключать главу
 let lives = 5;
 // Запреты на повтор действий
 let statushundredsixteen = false;
