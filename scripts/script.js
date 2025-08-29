@@ -333,7 +333,7 @@ thirty: {
     text: texts.thirtyone,
     choices: [
       {
-        text: "Дальше", next: "thirtytwosword"}
+        text: "Дальше", damage: 1, next: "thirtytwosword"}
     ]
   },
 
@@ -383,7 +383,7 @@ thirty: {
   thirtyfour: {
     text: texts.thirtyfour,
     choices:  [
-      {text: "Попытатьс пройти бесшумно", next: "thirtysix"},
+      {text: "Попытаться пройти бесшумно", next: "thirtysix"},
       {text: "Вернуться в комнату с клеткой", next: "fiftynine"}
     ]
   },
@@ -603,7 +603,7 @@ fiftyone: {
 },
 
 fiftytwo: {
-  text: texts.fiftythree,
+  text: texts.fiftytwo,
   choices: [
     {text: "Позвать товарищей и напасть на тварей", next: "fourtyone"},
     {text: "Вернуться в комнату с клеткой",  next: "fiftynine"}
@@ -882,20 +882,15 @@ eightyone: {
 
 eightytwo: {
   text: texts.eightytwo,
-<<<<<<< HEAD
   choices: [{text: "Стоять неподвижно",  next: "eightysix"},
-=======
-  choices: [{text: "Продолжать прятаться",  next: "eightysix"},
->>>>>>> 6dc2c291ecf184c1895da172cbfda062ed2c9a8f
     {text: "Попытаться сменить место", next: "eightyfive"}
   ]
 },
 
-<<<<<<< HEAD
 eightythree: {
   text: texts.eightythree,
   choices: [{text: "Напасть из засады",
-    ction: () => {
+    action: () => {
       roll20((roll) => { // 'roll' — это значение d20
         const resultAttack = 20 - roll; // результат атаки
         if (resultAttack <= 6) {
@@ -910,9 +905,6 @@ eightythree: {
       }
   }]
 },
-
-=======
->>>>>>> 6dc2c291ecf184c1895da172cbfda062ed2c9a8f
       eightyfive: {
         text:texts.eightyfive,
         choices: [{text: "Двинуться вперёд", next: "eightynine"},
@@ -1011,7 +1003,7 @@ eightythree: {
             currentBlock='ninetysix';
              } else {
             alert(`Значение вашего броска: ${resultAttack}. Это провал!`);
-            currentBlock='ninetyone';
+            currentBlock='ninetynine';
           }
           render();
         });
@@ -1140,7 +1132,7 @@ eightythree: {
       },
       ninetynine: {
         text: texts.ninetynine,
-        choices: [{text: "Мечпопал в  ваше плечо", damage: 3, next: "ninetyninenext"}]
+        choices: [{text: "Меч попал в  ваше плечо", damage: 3, next: "ninetyninenext"}]
       },
 
       ninetyninenext: {
@@ -1817,11 +1809,9 @@ action: () => {
             alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
             currentBlock='hundredsixtyone';
           } else {
-<<<<<<< HEAD
+
             alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
-=======
-            alert(`начение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
->>>>>>> 6dc2c291ecf184c1895da172cbfda062ed2c9a8f
+
             currentBlock='hundredsixtytwo';
           }
           render();
@@ -1893,11 +1883,9 @@ action: () => {
             alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
             currentBlock='hundredsixtyone';
           } else {
-<<<<<<< HEAD
+
             alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
-=======
-            alert(`начение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
->>>>>>> 6dc2c291ecf184c1895da172cbfda062ed2c9a8f
+
             currentBlock='hundredsixtytwo';
           }
           render();
@@ -2433,11 +2421,9 @@ action: () => {
 
       hundredninetyeight: {
         text: texts.hundredninetyeight,
-        choice: [{text: "Забрать себе всё", 
+        choices: [{text: "Забрать себе всё", 
           action: () =>{
-            addItemToEquipment("Драгоценный камень");
-            addItemToEquipment("Драгоценный камень");
-            addItemToEquipment("Драгоценный камень");
+            addItemToEquipment("Драгоценные камени");
             currentBlock='hundredninetyeightnext';
             render();
           }
@@ -2518,11 +2504,9 @@ action: () => {
       twohundredthree: {
         text: texts.twohundredthree,
         choices: [{
-<<<<<<< HEAD
+
           text: "Бросить d6, доверившись судьбе",
-=======
-          text: "Бросить d6б, доверившись судьбе",
->>>>>>> 6dc2c291ecf184c1895da172cbfda062ed2c9a8f
+
           action: () => {
           rollDice((result) => {
           if (result >=1 && result <=2) {
@@ -2777,7 +2761,7 @@ action: () => {
         });
       }
         }]
-<<<<<<< HEAD
+
       },
 
       twohundredtwentyone: {
@@ -3103,7 +3087,7 @@ action: () => {
 
         twohundredfortyeight: {
           text: texts.twohundredfortyeight,
-          choices: [{text: "Атаковать на оперижение",
+          choices: [{text: "Атаковать на опережение",
            action: () => {
           roll20((roll) => { // 'roll' — это значение d20
           const resultAttack = 20 - roll; // результат атаки
@@ -3617,16 +3601,242 @@ choices: [{
 
         twohundredninety: {
           text: texts.twohundredninety
+        },
+
+        twohundredninetyone: {
+          text: texts.twohundredninetyone,
+          choices: [
+            {texts: "Дальше",
+            action: () => {
+              addItemToEquipment("Дрогоценные камни");
+              addGold(500);
+              currentBlock = "threehundrednine";
+              render();
+            }
+            } 
+          ]
+        },
+
+        twohundredninetytwo: {
+          text: texts.twohundredninetytwo,
+          choices: [{
+            text: "Ударить снова",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 6) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='threehundred';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='threehundredone';
+          }
+          render();
+        });
+      }
+          }]
+        },
+
+        twohundredninetythree: {
+          text: texts.twohundredninetythree,
+          choices: [
+            {text: "Получить урон", damage: 3, next: "twohundredninetythreenext"}
+          ]
+        },
+
+        twohundredninetythreenext: {
+          text: "Вы ранены, но не собираетесь отступать из боя.",
+          choices: [{
+            text: "Ударить в ответ",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 6) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='twohundredninetytwo';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='threehundredone';
+          }
+          render();
+        });
+      }
+          }]
+        },
+
+        twohundredninetyfour: {
+          text: texts.twohundredninetyfour,
+          choices: [
+            {text: "Принять исцеление", 
+              action: () => {
+                restoreLives();
+                currentBlock = "threehundredeight";
+                render();
+              }
+
+              }
+            
+          ]
+        },
+
+        twohundredninetyfive: {
+          text: texts.twohundredninetyfive,
+          choices: [{text: "Дальше", next: "threehundredeight"}]
+        },
+
+                twohundredninetysix: {
+          text: texts.twohundredninetysix,
+          choices: [{text: "Ударить в ответ", 
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='threehundredtwo';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='twohundredninetyseven';
+          }
+          render();
+        });
+      }
+          }]
+        },
+
+        twohundredninetyseven: {
+          text: texts.twohundredninetyseven,
+          choices: [{text: "Получить урон", damage: 4, next: "twohundredninetysevennext"}]
+        },
+
+        twohundredninetysevennext: {
+          text: "Вы собираете последние силы для ответного удара.",
+          choices: [{text: "Совершить атаку",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='twohundredninetysix';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='threehundredthree';
+          }
+          render();
+        });
+      }}
+          ]
+        },
+
+        twohundredninetyeight: {
+          text: texts.twohundredninetyeight,
+          choices: [
+            {text: "Прыгнуть и разведать обстановку", next: "threehundredfour"},
+            {text: "Вернуться, чтобы помочь товарищам", next: "twohundredthirtynine"}
+          ]
+        },
+
+        twohundredninetynine: {
+          text: texts.twohundredninetynine,
+          choices: [
+            {text: "Сражаться", next: "twohundredfiftyone"},
+            {text: "Вернуться к остальным", next: "twohundredthirtynine"}
+          ]
+        },
+
+        threehundred: {
+          text: texts.threehundred,
+          choices: [{text: "Дальше", next: "threehundredeight"}]
+        },
+
+        threehundredone: {
+          text: texts.threehundredone,
+          choices: [{text: "Дальше", damage: 2, next: "threehundredeight"}]
+        },
+
+        threehundredtwo: {
+          text: texts.threehundredtwo,
+          choices: [{text: "Убежать", next: "twohundredfiftyeight"}]
+        },
+
+        threehundredthree: {
+          text: texts.threehundredthree,
+          choices: [{text: "Получить урон", damage: 6, next: "threehundredthreenext"}]
+        },
+
+        threehundredthreenext: {
+          text: texts.threehundredthreenext,
+          choices: [{
+            text: "Пробежать мимо", next: "twohundredfortyfour"
+          },
+          {text: "Попытаться ударить",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='threehundredtwo';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='threehundredfive';
+          }
+          render();
+        });
+      }
+            }
+        ]
+        },
+
+        threehundredfour: {
+          text: texts.threehundredfour,
+          choices: [
+            {text: "Сидеть и ждать", next: "threehundredseven"},
+            {text: "Искать выход на ощупь", next: "twohundredninety"}
+          ]
+        },
+        
+        threehundredfive: {
+          text: texts.threehundredfive,
+          choices: [{text: "Пробежать мимо", next: "twohundredfortyfour"},
+            {text: "Попытаться ударить",
+            action: () => {
+          roll20((roll) => { // 'roll' — это значение d20
+          const resultAttack = 20 - roll; // результат атаки
+          if (resultAttack <= 5) {
+            alert(`Значение вашего броска: ${resultAttack}. Вы попали!`);
+            currentBlock='threehundredtwo';
+          } else {
+            alert(`Значение вашего броска: ${resultAttack}. Вы промахнулись!`);
+            currentBlock='threehundredsix';
+          }
+          render();
+        });
+      }}
+          ]
+        },
+
+        threehundredsix: {
+          text: texts.threehundredsix
+        },
+
+        threehundredseven: {
+          text: texts.threehundredseven
+        },
+
+
+        threehundredeight: {
+          text: texts.threehundredeight
+        },
+
+        hreehundrednine: {
+          text: texts.threehundrednine
         }
 
   }
-=======
-      }
-    }
->>>>>>> 6dc2c291ecf184c1895da172cbfda062ed2c9a8f
+
+
 // Переменные состояния
 let currentBlock = 'one'; // тут переключать главу
-let lives = 7;
+let lives = 5;
 // Запреты на повтор действий
 let statushundredsixteen = false;
 let statushundredeight = false;
@@ -3738,6 +3948,7 @@ function addBlock(text) {
 
 // Обновленная функция render с учетом условий выбора // НОВОЕ
 function render() {
+  document.getElementById('livesCount').innerText = `${lives}`;
   const block = story[currentBlock]; // Используем ваш объект story
   addBlock(block.text);
   
@@ -3750,16 +3961,27 @@ function render() {
   });
 
   // Создаем кнопки для доступных вариантов
-  for (let choice of availableChoices) {
-    const btn = document.createElement('button');
-    btn.innerText = choice.text + (choice.damage ? ` (-${choice.damage} HP)` : '');
-    btn.className = 'choice';
-    btn.onclick = () => makeChoice(choice);
-    choicesContainer.appendChild(btn);
+for (let choice of availableChoices) {
+  const btn = document.createElement('button');
+  // Формируем текст кнопки
+  let btnText = choice.text;
+
+  if (choice.damage !== undefined) {
+    btnText += ` (-${choice.damage} HP)`;
+  }
+  if (choice.heal !== undefined) {
+    btnText += ` (+${choice.heal} HP)`;
+    updateLivesDisplay();
   }
 
+  btn.innerText = btnText;
+  btn.className = 'choice';
+  btn.onclick = () => makeChoice(choice);
+  choicesContainer.appendChild(btn);
+}
+
   // Обновляем статус HP
-  document.getElementById('livesCount').innerText = `${lives}`;
+   document.getElementById('livesCount').innerText = `${lives}`;
 
     const restoreBtn = document.getElementById('restoreBtn');
   if (restoreScenes.includes(currentBlock)) {
@@ -3776,9 +3998,15 @@ function makeChoice(choice) {
     return; // После выполнения действия дальше не идём
   }
 
- if (choice.damage!==undefined) {
-   lives -= choice.damage; // Вычитаем урон
- }
+  console.log('Выбранный выбор:', choice);
+  if (choice.damage !== undefined) {
+    lives -= choice.damage;
+    console.log('Линия damage, lives:', lives);
+  }
+  if (choice.heal !== undefined) {
+    lives += choice.heal;
+    console.log('Линия heal, lives:', lives);
+  }
 
 if (lives<=0) {
    alert("У вас закончились HP! Игра окончена.");
@@ -3792,6 +4020,14 @@ if (lives<=0) {
 }
 
 // Лечение
+
+function restoreLives() {
+  lives += 6;
+  if (lives > 7) {
+    lives = 7;
+  }
+}
+
 const restoreScenes = ['healtext', 'fourteencont', 'fiveteen', 'sixteen',
   'twentyfive']; // главы, в которых работает исцеление
 
