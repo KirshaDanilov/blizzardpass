@@ -1,22 +1,21 @@
   body {
     font-family: Arial, sans-serif;
-    max-width: 700px;
-    margin: 50px auto;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: black;
+    color: white;
+    font-family: "Alegreya", serif;
+    font-size: 18px;
   }
   .game {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
   .story {
-    margin-bottom: 20px;
+    padding-top: 10px;
   }
   .block {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     padding: 10px;
-    background-color: #e0e0e0;
+
     border-radius: 4px;
   }
   .choice {
