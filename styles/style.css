@@ -1,33 +1,45 @@
   body {
     font-family: Arial, sans-serif;
     background-color: black;
-    color: white;
-    font-family: "Alegreya", serif;
-    font-size: 18px;
   }
+
   .game {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
   }
-  .story {
-    padding-top: 10px;
-  }
-  .block {
-    margin-bottom: 10px;
-    padding: 10px;
 
-    border-radius: 4px;
+  .story {
+    color: white;
+    font-family: "Alegreya", serif;
+    font-size: 20px;
+    text-align: justify;
   }
+
+  .block {
+    
+  }
+
+  .choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   .choice {
+    white-space: nowrap;
     display: block;
     margin-top: 10px;
-    padding: 10px;
-    background-color: #c0c0c0;
+    padding: 10px 26px;
+    background-color: #FF6200;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    width: fit-content;
+    color: white;
+    font-family: "Alegreya", serif;
+    font-size: 20px;
+    border-radius: 25px;
+    max-height: 50px;
   }
+
   .status {
     margin-top: 20px;
     font-weight: bold;
@@ -39,4 +51,10 @@
 
 .restoreSixBtn {
     display: none;
+  }
+
+  .charactersheet {
+    color: white;
+    font-family: "Alegreya", serif;
+    font-size: 20px;
   }
