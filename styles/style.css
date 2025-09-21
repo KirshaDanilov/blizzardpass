@@ -1,22 +1,69 @@
   body {
-    font-family: Arial, sans-serif;
-    background-color: black;
+    font-family: var(--main-font);
+    background-color: var(--bg-color);
+  }
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+body.blurred::after {
+  opacity: 1;
+  pointer-events: auto; /* если нужно блокировать клики */
+}
+
+  .head {
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    top: 0;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: row;
+    gap: 10;
+    justify-content: end;
+    padding: 25px 60px 0 0;
+  }
+
+  .icontop {
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+  }
+
+  .iconcharter {
+    fill: var(--bg-color);
+  }
+
+  .iconcharterbg {
+    fill: var(--accent-color);
   }
 
   .game {
     max-width: 900px;
     margin: 0 auto;
+    padding: 100px 0;
   }
 
   .story {
-    color: white;
-    font-family: "Alegreya", serif;
+    color: var(--main-color);
+    font-family: var(--main-font);
     font-size: 20px;
     text-align: justify;
-  }
-
-  .block {
-    
   }
 
   .choices {
@@ -30,11 +77,11 @@
     display: block;
     margin-top: 10px;
     padding: 10px 26px;
-    background-color: #FF6200;
+    background-color: var(--accent-color);
     border: none;
     cursor: pointer;
-    color: white;
-    font-family: "Alegreya", serif;
+    color: var(--main-color);
+    font-family: var(--main-font);
     font-size: 20px;
     border-radius: 25px;
     max-height: 50px;
@@ -53,8 +100,78 @@
     display: none;
   }
 
-  .charactersheet {
-    color: white;
-    font-family: "Alegreya", serif;
-    font-size: 20px;
-  }
+.charactersheet {
+  position: fixed;
+  bottom: -620px;
+  left: 0;
+  width: 608px;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  font-size: 20px;
+  background: var(--bg-color);
+  transition: bottom 0.5s ease;
+  z-index: 3;
+  max-height: 258px;
+}
+
+.charactersheet.visible {
+  bottom: 0;
+}
+
+.charactersheetmain {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  grid-template-rows: repeat(2, 22px);
+  gap: 53px;
+  grid-auto-flow: column;
+  font-size: 16px;
+  padding-left: 22px;
+  padding-right: 122px;
+}
+
+
+#scrollDownBtn {
+  position: fixed;
+  width: 75px;
+  height: 75px;
+  right: 50%;
+  bottom: 40px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--main-color);
+  border: 0.83px solid var( --accent-color);
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease, background-color 0.6s ease, border-color 0.6s ease;
+  z-index: 2;
+}
+
+#scrollDownBtn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scrollDownBtn:hover {
+  border: none;
+  background-color: var(--accent-color);
+}
+
+.arrow {
+  fill: var(--main-color);
+}
+
+#equipment span {
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 20px;
+  padding: 3px 15px;
+  margin-right: 10px;
+  cursor: default;
+}
+
+.charactersheetability {
+  visibility: hidden;
+}

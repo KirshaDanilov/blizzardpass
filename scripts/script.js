@@ -130,7 +130,7 @@ ten: {
   },
 
   healtext: {
-    text: '<em>Теперь находясь вне боя вы можете принять исцеление Родерика, нажав на кнопку «Попросить Родерика вылечить».</em>',
+    text: '<em>Теперь, находясь вне боя, вы можете принять исцеление Родерика, нажав на кнопку «Попросить Родерика вылечить».</em>',
     choices: [ {text: "Дальше", next: "fourteencont"}]
   },
 
@@ -3894,10 +3894,10 @@ function updateEquipmentDisplay() {
     return;
   }
   
-  // создаем список предметов
   equipment.forEach(item => {
     const itemSpan = document.createElement('span');
     itemSpan.innerText = item + ' ';
+    itemSpan.classList.add('item-' + item.toLowerCase());
     equipmentDiv.appendChild(itemSpan);
   });
 }
