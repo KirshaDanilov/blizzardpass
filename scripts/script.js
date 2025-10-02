@@ -1229,13 +1229,18 @@ eightythree: {
         text: texts.hundredseven,
         choices: [{text: "Забрать снаряжение",
         action: () => {
-          addItemToEquipment("Меч");
-          addItemToEquipment("Кожанные доспехи");
-          addItemToEquipment("Воровские инструменты");
-          addItemToEquipment("Рюкзак со снаряжением");
-          currentBlock="hundredsevennext";
-          render()
-        }}]
+  console.log("Добавление предметов...");
+  addItemToEquipment("Меч");
+  addItemToEquipment("Кожанные доспехи");
+  addItemToEquipment("Воровские инструменты");
+  addItemToEquipment("Рюкзак со снаряжением");
+  console.log("Предметы добавлены");
+
+  currentBlock = "hundredsevennext";
+
+  console.log("Текущий блок:", currentBlock);
+  render();
+}}]
       },
 
       hundredsevennext: {
@@ -3842,7 +3847,7 @@ choices: [{
 
 
 // Переменные состояния
-let currentBlock = 'one'; // тут переключать главу
+let currentBlock = 'hundredseven'; // тут переключать главу
 let lives = 7;
 // Запреты на повтор действий
 let statushundredsixteen = false;
@@ -3897,11 +3902,14 @@ function updateEquipmentDisplay() {
   equipment.forEach(item => {
     const itemSpan = document.createElement('span');
     itemSpan.innerText = item + ' ';
-    itemSpan.classList.add('item-' + item.toLowerCase());
+
+    // Создаем безопасное имя класса, заменяя пробелы на дефисы
+    const safeClassName = 'item-' + item.toLowerCase().replace(/\s+/g, '-');
+
+    itemSpan.classList.add(safeClassName);
     equipmentDiv.appendChild(itemSpan);
   });
 }
-
 // Забрать предмет
 function removeItemFromEquipment(itemName) {
   const index = equipment.indexOf(itemName);
