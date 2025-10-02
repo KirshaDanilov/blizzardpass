@@ -104,7 +104,7 @@ body.blurred::after {
   position: fixed;
   bottom: -620px;
   left: 0;
-  width: 608px;
+  width: fit-content;
   color: var(--main-color);
   font-family: var(--main-font);
   font-size: 20px;
@@ -120,13 +120,15 @@ body.blurred::after {
 
 .charactersheetmain {
   display: grid;
-  grid-template-columns: 1fr 80px;
-  grid-template-rows: repeat(2, 22px);
-  gap: 53px;
-  grid-auto-flow: column;
   font-size: 16px;
   padding-left: 22px;
   padding-right: 122px;
+}
+
+.charterleftpart {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: column;
 }
 
 
@@ -174,4 +176,52 @@ body.blurred::after {
 
 .charactersheetability {
   visibility: hidden;
+}
+
+.openBtn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 8px 33px;
+  cursor: pointer;
+  z-index: 5;
+  background-color: var(--accent-color);
+  border: transparent;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: var(--main-color);
+  font-family: var(--acent-font);
+  font-size: 22px;
+}
+
+.charactersheetBtn {
+  display: flex;
+}
+
+.charterbtn {
+  padding: 9px 17px;
+  font-family: var(--acent-font);
+  color: var(--main-color);
+  font-size: 22px;
+  background-color: var(--bg-color);
+  outline: 1px solid var(--accent-color);
+  border: none;
+  cursor: pointer;
+}
+
+.borderleft {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.bordercenter {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.borderright {
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }

@@ -19,19 +19,21 @@
   <main class="game" id="game">
     <p class="story" id="story"></p>
     <div class="choices" id="choices"></div>
-    <button id="openBtn" style="position: fixed; left: 10px; bottom: 10px; z-index: 1000;">Персонаж</button>
+    <button class="openBtn" id="openBtn">Персонаж</button>
     <section class="charactersheet">
       <div class="charactersheetBtn">
-        <button>Персонаж</button>
-        <button>Характеристики</button>
-        <button>Навыки</button>
-        <button>Способности</button>
+        <button class="charterbtn borderleft">Персонаж</button>
+        <button class="charterbtn bordercenter">Характеристики</button>
+        <button class="charterbtn bordercenter">Навыки</button>
+        <button  class="charterbtn borderright">Способности</button>
       </div>
      <div class="charactersheetmain">
+      <div class="charterleftpart">
       <h3 class="charactersheetmaintittle">Имя: персонажа</h3>
       <span>Уровень: 1</span>
       <p>HP: <span class="status" id="livesCount"></span></p>
       <span>THAC0: 20</span>
+      </div>
       <p>+4 к попаданию и двойной урон при ударе сзади</p>
       </div>
       <div id="equipment-container">
