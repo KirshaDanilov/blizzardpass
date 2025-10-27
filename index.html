@@ -18,28 +18,29 @@
   </header>
   <main class="game" id="game">
     <p class="story" id="story"></p>
+    <div>
     <div class="choices" id="choices"></div>
+        <button class="restoreBtn choice" id="restoreBtn">Попросить Родерика вылечить</button>
+    <button class="restoreSixBtn choice" id="restoreSixBtn">Выпить зелье</button>
+    </div>
     <button class="openBtn" id="openBtn">Персонаж</button>
     <section class="charactersheet">
       <div class="charactersheetBtn">
         <button class="charterbtn borderleft">Персонаж</button>
         <button class="charterbtn bordercenter">Характеристики</button>
         <button class="charterbtn bordercenter">Навыки</button>
-        <button  class="charterbtn borderright">Способности</button>
+        <button  class="charterbtn borderright">Спасброски</button>
       </div>
      <div class="charactersheetmain">
       <div class="charterleftpart">
-      <p>Имя: персонажа</p>
-      <span>Уровень: 1</span>
       <p>HP: <span class="status" id="livesCount"></span></p>
       <span>THAC0: 20</span>
       </div>
       <p>+4 к попаданию и двойной урон при ударе сзади</p>
+      <p id="gold"></p>
       </div>
       <section class="equipment-container" id="equipment-container">
-  <h3>Ваше снаряжение:</h3>
   <p id="equipment"></p>
-  <p id="gold"></p>
 </section>
 <div class="charactersheetability">
         <h3>Характеристики персонажа</h3>
@@ -50,10 +51,13 @@
         <p>Мудрость:<span id="wisdom"></span></p>
         <p>Хариза:<span id="charisma"></span></p>
     </div>
-    
+    <div class="charactersheetskill">
+  
+    </div>
+        <div class="charactersheetsave">
+  
+    </div>
     </section>
-    <button class="restoreBtn" id="restoreBtn">Попросить Родерика вылечить</button>
-    <button class="restoreSixBtn" id="restoreSixBtn">Выпить зелье</button>
 <button id="scrollDownBtn" title="Прокрутить вниз">
   <svg width="16" height="37" viewBox="0 0 16 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path class="arrow" d="M7.29289 36.7071C7.68342 37.0976 8.31658 37.0976 8.70711 36.7071L15.0711 30.3431C15.4616 29.9526 15.4616 29.3195 15.0711 28.9289C14.6805 28.5384 14.0474 28.5384 13.6569 28.9289L8 34.5858L2.34314 28.9289C1.95262 28.5384 1.31946 28.5384 0.928931 28.9289C0.538407 29.3195 0.538406 29.9526 0.928931 30.3431L7.29289 36.7071ZM8 0L7 -4.37114e-08L7 36L8 36L9 36L9 4.37114e-08L8 0Z" fill="white"/>

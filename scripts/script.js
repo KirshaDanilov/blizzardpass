@@ -1206,7 +1206,7 @@ eightythree: {
       hundredsix: {
         text: texts.hundredsix,
         choices: [
-          {text: "Попытаться поднять ворота", next: "hundredeeleven"},
+          {text: "Попытаться поднять ворота", next: "hundredeleven"},
           {text: "Осмотреть решётку",
             action: () => {
         roll100((roll) => { // 'roll' — это значение d100
@@ -1430,7 +1430,7 @@ action: () => {
         text: texts.hundredtwentyeight,
         choices: [
           {text: "Позволить Саламдросу идти вперёд", next: "hundredthreety"},
-          {text: "Идтм вперёд самому",
+          {text: "Идти вперёд самому",
            action: () => {
             roll100((roll) => { // 'roll' — это значение d100
           const resultSkillCheck = roll; // результат атаки
@@ -3847,7 +3847,7 @@ choices: [{
 
 
 // Переменные состояния
-let currentBlock = 'hundredseven'; // тут переключать главу
+let currentBlock = 'one'; // тут переключать главу
 let lives = 7;
 // Запреты на повтор действий
 let statushundredsixteen = false;
@@ -4121,5 +4121,9 @@ function roll100(callback) {
 window.onload = () => {
   renderGold();
 };
+
+  document.getElementById('openBtn').addEventListener('click', function() {
+    document.querySelector('.charterbtn.borderleft').focus();
+  });
 
 render();

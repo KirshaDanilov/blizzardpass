@@ -104,7 +104,8 @@ body.blurred::after {
   position: fixed;
   bottom: -620px;
   left: 0;
-  width: fit-content;
+  max-width: 615px;
+  border-top-right-radius: 20px;
   color: var(--main-color);
   font-family: var(--main-font);
   font-size: 20px;
@@ -119,8 +120,9 @@ body.blurred::after {
 }
 
 .charactersheetmain {
+  display: block;
   display: grid;
-  grid-template-columns: 1fr 148px;
+  grid-template-columns: 1fr 148px 1fr;
   font-size: 16px;
   padding-left: 22px;
   padding-right: 122px;
@@ -133,6 +135,17 @@ body.blurred::after {
   grid-auto-flow: column;
 }
 
+.charactersheetability {
+  display: none;
+}
+
+.charactersheetskill {
+  display: none;
+}
+
+.charactersheetsave {
+  display: none;
+}
 
 #scrollDownBtn {
   position: fixed;
@@ -174,6 +187,12 @@ body.blurred::after {
   padding: 3px 15px;
   margin-right: 10px;
   cursor: default;
+  line-height: 1.8;
+  align-items: flex-start;
+}
+
+#equipment p {
+  margin-top: 0;
 }
 
 .charactersheetability {
@@ -209,6 +228,20 @@ body.blurred::after {
   outline: 1px solid var(--accent-color);
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.charterbtn:active{
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.charterbtn:hover {
+  background-color: var(--accent-color);
+}
+
+.charterbtn:focus {
+  background-color: var(--accent-color);
 }
 
 .borderleft {
@@ -231,7 +264,6 @@ body.blurred::after {
 .equipment-container {
   display: flex;
   padding-left: 22px;
-  align-items: center;
-  gap: 10px;
 }
+
 
