@@ -279,7 +279,7 @@ twentysix: {
 },
 
 twentyseven: {
-    text: texts.seven,
+    text: texts.twentyseven,
     choices: [ {text: "Выйти из камеры", next: "thirtytwosword"}]
 },
 
@@ -1095,8 +1095,8 @@ eightythree: {
       nintyfivenext:  {
         text: "Что выделаете дальше?",
         choices:[
-          {text: "Бежать к дальнему выходу", next: "hundredone"},
-          {text: "Сражаться", next: "hundredtwo"}
+          {text: "Бежать к дальнему выходу", next: "hundredtwo"},
+          {text: "Сражаться", next: "hundredone"}
         ]
       },
 
@@ -2294,7 +2294,7 @@ action: () => {
       },
 
       hundredeightyfour: {
-        text: texts.hundredeightythree,
+        text: texts.hundredeightyfour,
         choices: [
           {text: "Атаковать Родерика и Саламдроса", next: "hundredeightysix"},
           {text: "Атаковать Хозяина", next: "hundredeightyfive"}
@@ -3847,7 +3847,7 @@ choices: [{
 
 
 // Переменные состояния
-let currentBlock = 'one'; // тут переключать главу
+let currentBlock = 'hundredeightytwo'; // тут переключать главу
 let lives = 7;
 // Запреты на повтор действий
 let statushundredsixteen = false;

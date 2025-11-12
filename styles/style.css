@@ -105,6 +105,8 @@ body.blurred::after {
   bottom: -620px;
   left: 0;
   max-width: 615px;
+  border-top: 2px solid var(--accent-color);
+   border-right: 2px solid var(--accent-color);
   border-top-right-radius: 20px;
   color: var(--main-color);
   font-family: var(--main-font);
@@ -120,10 +122,8 @@ body.blurred::after {
 }
 
 .charactersheetmain {
-  display: block;
   display: grid;
   grid-template-columns: 1fr 148px 1fr;
-  font-size: 16px;
   padding-left: 22px;
   padding-right: 122px;
 }
@@ -139,13 +139,6 @@ body.blurred::after {
   display: none;
 }
 
-.charactersheetskill {
-  display: none;
-}
-
-.charactersheetsave {
-  display: none;
-}
 
 #scrollDownBtn {
   position: fixed;
@@ -180,19 +173,16 @@ body.blurred::after {
   fill: var(--main-color);
 }
 
+.equipment-container {
+  max-width: 580px;
+}
+
 #equipment span {
-  background-color: var(--accent-color);
   color: white;
-  border-radius: 20px;
-  padding: 3px 15px;
   margin-right: 10px;
   cursor: default;
   line-height: 1.8;
   align-items: flex-start;
-}
-
-#equipment p {
-  margin-top: 0;
 }
 
 .charactersheetability {
@@ -264,6 +254,37 @@ body.blurred::after {
 .equipment-container {
   display: flex;
   padding-left: 22px;
+}
+
+@media (max-width: 480px) {
+
+  body {
+    max-width: 480px;
+  }
+
+.charactersheet {
+  max-width: 400px;
+  max-height: 658px;
+}
+
+.charactersheetmain {
+  display: flex;
+  flex-direction: column;
+  padding-left: 22px;
+  padding-right: 122px;
+}
+
+  .charterleftpart {
+  display: flex;
+  flex-direction: column;
+}
+
+  .choice {
+    white-space: pre-wrap;
+  }
+     .head {
+    height: 100px;
+  }
 }
 
 
