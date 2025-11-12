@@ -281,6 +281,7 @@ body.blurred::after {
 
   .choice {
     white-space: pre-wrap;
+    max-height: 100px;
   }
      .head {
     height: 100px;
