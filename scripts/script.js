@@ -552,14 +552,14 @@ thirty: {
       {text: "Взять нож",
         action: () => {
           addItemToEquipment("Нож");
-          currentBlock="foutyeightnext";
+          currentBlock="fourtyeightnext";
           render()
         }
       }
     ]
   },
   fourtyeightnext: {
-    text: texts.foutyeightnext,
+    text: texts.fourtyeightnext,
     choices: [
       {text: "Пойти к дальнему выходу", next: "sixty"},
       {text: "Вернуться в комнату с клеткой",  next: "fiftynine"}
@@ -730,7 +730,7 @@ sixtyeight: {
       action: () => {
           rollDice((result) => {
           alert(`Выпало число: ${result}`);
-          if (result >=1 && result <=2) {
+          if (result <=2) {
             currentBlock='seventythree';
           } else {
             currentBlock='sixtynine';
@@ -764,7 +764,7 @@ seventyone: {
 },
 
 seventythree: {
-  text: texts.seventuthree,
+  text: texts.seventythree,
   choices: [{text: "Вернуться в комнату с клеткой",  next: "fiftynine"}]
 },
 
