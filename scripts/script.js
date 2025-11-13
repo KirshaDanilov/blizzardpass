@@ -526,7 +526,7 @@ thirty: {
   fourtysix: {
     text: texts.fourtysix,
     choices: [
-      {text: "Обычкать комнату", next: "fourtyeight"},
+      {text: "Обыскать комнату", next: "fourtyeight"},
       {text: "Пойти к дальнему выходу", next: "sixty"},
       {text: "Вернуться в комнату с клеткой",  next: "fiftynine"}
     ]
@@ -540,7 +540,7 @@ thirty: {
   fourtysevennext: {
     text: texts.fourtysevennext,
     choices: [
-      {text: "Обычкать комнату", next: "fourtyeight"},
+      {text: "Обыскать комнату", next: "fourtyeight"},
       {text: "Пойти к дальнему выходу", next: "sixty"},
       {text: "Вернуться в комнату с клеткой",  next: "fiftynine"}
     ]
