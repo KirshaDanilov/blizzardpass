@@ -665,7 +665,7 @@ sixty: {
 },
 
 sixtyone: {
-  text: texts.sixtynine,
+  text: texts.sixtyone,
   choices:  [
     {text: "Теромил", next: "sixtytwo"},
     {text: "Саламдрос", next: "sixtythree"},
