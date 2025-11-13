@@ -2856,6 +2856,7 @@ action: () => {
             action: () => {
               statustwohundredthirtyone = true;
               currentBlock = "twohundredthirtyone"
+              render();
             }
           },
           {text: "Пройти в дверь слева", next: "twohundredthirtytwo"}
@@ -2902,8 +2903,8 @@ action: () => {
         choices: [
           {text: "Перепрыгнуть через стол и схватить человека за руку", next: "twohundredthirtyseven"},
           {text: "Осторожно обойти стол, высматривая ловушки", next: "twohundredthirtyeight"},
-          {text: "Покинуть комнату", next: "twohundredthirtnine"},
-          {text: "Перепрыгнуть через стол и схватить человека за руку", next: "twohundredforty"},
+          {text: "Покинуть комнату", next: "twohundredthirtynine"},
+          {text: "Попытаться обмануть", next: "twohundredforty"},
         ]
       },
 
@@ -2922,6 +2923,7 @@ action: () => {
             action: () => {
               statustwohundredthirtyone = true;
               currentBlock = "twohundredthirtyone"
+              render();
             }
             }
           ,
@@ -2980,6 +2982,7 @@ action: () => {
             condition: () => !statustwohundredthirtyone,
             action: () => {
               currentBlock = "twohundredthirtyone"
+              render ();
             }
           }
           ]
