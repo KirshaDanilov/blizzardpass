@@ -2558,7 +2558,7 @@ action: () => {
 
     twohundredsix:{
       text: texts.twohundredsix,
-              choice: [{text: "Забрать себе всё", 
+              choices: [{text: "Забрать себе всё", 
           action: () =>{
             addItemToEquipment("Драгоценный камень");
             addItemToEquipment("Драгоценный камень");
