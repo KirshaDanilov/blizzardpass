@@ -825,7 +825,7 @@ seventyseven: {
 
 seventyeight: {
   text: texts.seventyeight,
-  choices: [{text: "Дальше", next: "seventynone"}]
+  choices: [{text: "Дальше", next: "seventynine"}]
 },
 
 seventynine: {
