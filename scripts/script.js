@@ -590,7 +590,7 @@ fifty: {
   text: texts.fifty,
   choices: [
     {text: "Последовать воле  большинства", next: "fiftynine"},
-    {text: "Попытатьсявсех переубедить", next: "fiftyseven"}
+    {text: "Попытаться всех переубедить", next: "fiftyseven"}
   ]
 },
 
@@ -968,14 +968,6 @@ eightythree: {
         text: texts.eightynine,
         choices: [{text: "Провести группу внутрь", next: "ninetyfive"},
         {text: "Вернуться в комнату с клеткой", next:  "hundred"},
-        {text: "Попросить Родерика исцелить",
-          condition: () => !statusheal,
-          action: () => {
-            statusheal = true;
-            rollRestore();
-            render();
-          }
-        }
           ]
     },
     ninety: {
@@ -1808,31 +1800,32 @@ action: () => {
         ]
       },
 
-      hundredfiftythree: {
-        text: texts.hundredfiftythree,
-        choices: [
-          {text: "Атаковать дважды!",
-          action: () => {
-          roll20((roll) => { // 'roll' — это значение d20
-          // const resultAttack = 20 - roll; // результат атаки
-          roll20((roll2) => {
-        const resultAttack2 = 20 - roll2; 
-        if (resultAttack <= 6 || resultAttack2 <= 5) {
-            alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
-            currentBlock='hundredsixtyone';
-          } else {
+hundredfiftythree: {
+  text: texts.hundredfiftythree,
+  choices: [
+    {
+      text: "Атаковать дважды!",
+action: () => {
+  roll20((roll) => {
+    const resultAttack = 20 - roll;
 
-            alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
+    roll20((roll2) => {
+      const resultAttack2 = 20 - roll2;
 
-            currentBlock='hundredsixtytwo';
-          }
-          render();
-        });
-        });
+      if (resultAttack <= 6 || resultAttack2 <= 6) {
+        alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
+        currentBlock='hundredsixtyone';
+      } else {
+        alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это провал!`);
+        currentBlock='hundredsixtytwo';
       }
-          }
-        ]
-      },
+      render();
+    });
+  });
+}
+    }
+  ]
+},
 
       hundredfiftyfour: {
         text: texts.hundredfiftyfour,
@@ -1887,11 +1880,12 @@ action: () => {
         choices: [
           {text: "Атаковать дважды!",
           action: () => {
-          roll20((roll) => { // 'roll' — это значение d20
-          // const resultAttack = 20 - roll; // результат атаки
-          roll20((roll2) => {
-        const resultAttack2 = 20 - roll2; 
-        if (resultAttack <= 6 || resultAttack2 <= 5) {
+  roll20((roll) => {
+    const resultAttack = 20 - roll;
+
+    roll20((roll2) => {
+      const resultAttack2 = 20 - roll2; 
+        if (resultAttack <= 6 || resultAttack2 <= 6) {
             alert(`Значение первой атаки: ${resultAttack}. Значение второй атаки: ${resultAttack2}. Это успех!`);
             currentBlock='hundredsixtyone';
           } else {
@@ -2945,7 +2939,7 @@ action: () => {
           text: texts.twohundredthirtysix,
           choices: [
             {text: "Продолжить бежать", next: "twohundredthirtyfive"},
-            {text: "Спрятаться", next: "twohundredfortyeight"}
+            {text: "Спрятаться", next: "twohundredfortyseven"}
           ]
         },
 
@@ -3448,7 +3442,7 @@ choices: [{
 
         twohundredseventythree: {
           text: texts.twohundredseventythree,
-          choice: [{text: "Дальше", damage: 2, next: "twohundredsixtynine"}]
+          choices: [{text: "Дальше", damage: 2, next: "twohundredsixtynine"}]
         },
 
         twohundredseventyfour: {
@@ -3581,13 +3575,13 @@ choices: [{
         },
 
         twohunderedeightyseven: {
-          text: texts.twohunderedeightysix,
-          choices: [{
+          text: texts.twohunderedeightyseven,
+  
             choices: [{
         text: "Сидеть и ждать", damage: 1, next: "threehundredseven"
       },
     {text: "Обследовать местность", damage: 1, next: "twohundredninety"}]
-          }]
+      
         },
 
         twohunderedeightyeight: {
@@ -3621,7 +3615,7 @@ choices: [{
         twohundredninetyone: {
           text: texts.twohundredninetyone,
           choices: [
-            {texts: "Дальше",
+            {text: "Дальше",
             action: () => {
               addItemToEquipment("Дрогоценные камни");
               addGold(500);
