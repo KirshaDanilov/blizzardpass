@@ -3057,7 +3057,7 @@ action: () => {
         },
 
         twohundredfortyfive: {
-          text: texts.twohundredfiftyfive,
+          text: texts.twohundredfortyfive,
           choices: [
             {text: "Нырнуть у существа между ног", next: "twohundredfortyfour"},
             {text: "Сражаться", next: "twohundredfiftysix"}
@@ -3845,7 +3845,7 @@ choices: [{
 
 
 // Переменные состояния
-let currentBlock = 'one'; // тут переключать главу
+let currentBlock = 'twohundredthirtyfive'; // тут переключать главу
 let lives = 7;
 // Запреты на повтор действий
 let statushundredsixteen = false;
