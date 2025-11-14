@@ -3275,7 +3275,7 @@ choices: [{
             currentBlock='twohundredeightytwo';
           } else {
             alert(`Выпало: ${result}.`);
-            currentBlock='twohundredeightyfour';
+            currentBlock='twohunderedeightyfour';
           }        
           render();
           });
@@ -3368,7 +3368,7 @@ choices: [{
     },
 
     twohundredsixtyeightnext: {
-      text: "зверь отходит Это хорошая возможность для удара.",
+      text: "Зверь отходит Это хорошая возможность для удара.",
       choices: [
             {text: "Совершить атаку",
               action: () => {
@@ -3528,6 +3528,7 @@ choices: [{
               action: () => {
                 spendGold(50);
                 currentBlock = "twohunderedeightythree"
+                render();
               }
             },
             {text: "У меня их нет...",
