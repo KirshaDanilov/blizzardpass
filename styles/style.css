@@ -27,7 +27,7 @@ body.blurred::after {
     position: fixed;
     width: 100%;
     height: 200px;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, var(--linear-gradient-color-start), var(--linear-gradient-color-end));
     top: 0;
   }
 
@@ -80,7 +80,7 @@ body.blurred::after {
     background-color: var(--accent-color);
     border: none;
     cursor: pointer;
-    color: var(--main-color);
+    color: var(--bottom-text-color);
     font-family: var(--main-font);
     font-size: 20px;
     border-radius: 25px;
@@ -173,12 +173,8 @@ body.blurred::after {
   fill: var(--main-color);
 }
 
-.equipment-container {
-  max-width: 580px;
-}
-
 #equipment span {
-  color: white;
+  color: var(--main-color);
   margin-right: 10px;
   cursor: default;
   line-height: 1.8;
@@ -200,7 +196,7 @@ body.blurred::after {
   border: transparent;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  color: var(--main-color);
+  color: var(--bottom-text-color);
   font-family: var(--acent-font);
   font-size: 22px;
 }
@@ -212,7 +208,7 @@ body.blurred::after {
 .charterbtn {
   padding: 9px 17px;
   font-family: var(--acent-font);
-  color: var(--main-color);
+  color: var(--bottom-text-color);
   font-size: 22px;
   background-color: var(--bg-color);
   outline: 1px solid var(--accent-color);
@@ -254,7 +250,26 @@ body.blurred::after {
 .equipment-container {
   display: flex;
   padding-left: 22px;
+  max-width: 580px;
 }
+
+.theme-color-button {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  top: 25px;
+  right: 0;
+}
+
+.theme-color-button-one {
+  fill: var(--accent-color);
+}
+
+.theme-color-button-two {
+  fill: var(--bg-color);
+}
+
 
 @media (max-width: 480px) {
 
@@ -286,6 +301,16 @@ body.blurred::after {
      .head {
     height: 100px;
   }
+
+  #scrollDownBtn {
+  transform: scale(0.5);
 }
+
+#scrollDownBtn svg {
+  transform: scale(0.5);
+}
+}
+
+
 
 

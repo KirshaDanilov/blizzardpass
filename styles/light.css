@@ -1,0 +1,10 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-color: #000;
+    --accent-color: #FF0000;
+    --bg-color: #fff;
+    --bottom-text-color: #fff;
+    --linear-gradient-color-start: rgba(255, 255, 255, 1);
+    --linear-gradient-color-end: rgba(255, 255, 255, 0);
+  }
+}

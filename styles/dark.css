@@ -1,6 +1,4 @@
-:root {
-    --main-font: '"Alegreya", serif';
-    --acent-font: "Roboto", sans-serif;
+:root.theme-dark {
     --main-color: #fff;
     --accent-color: #FF6200;
     --bg-color: #000;

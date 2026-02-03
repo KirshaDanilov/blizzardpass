@@ -3,18 +3,28 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta id="color-scheme-meta" name="color-scheme" content="dark">
 <title>Перевал Бури</title>
-<link rel="stylesheet" href="./styles/font.css" />
-<link rel="stylesheet" href="./styles/variables.css" />
-<link rel="stylesheet" href="./styles/globals.css" />
-<link rel="stylesheet" href="./styles/style.css" />
 <script type="module" src="./scripts/texts.js" defer></script>
 <script type="module" src="./scripts/script.js" defer></script>
 <script type="module" src="./scripts/chartersheet.js" defer></script>
 <script type="module" src="./scripts/scrollDownBtn.js" defer></script>
+<script type="module" src="./scripts/theme.js" defer></script>
+<link rel="stylesheet" href="./styles/font.css" />
+<link rel="stylesheet" href="./styles/variables.css" />
+<link rel="stylesheet" href="./styles/globals.css" />
+<link rel="stylesheet" href="./styles/style.css" />
+<link id="theme-stylesheet" rel="stylesheet" href="./styles/light.css">
 </head>
 <body>
   <header class="head">
+    <button id="theme-toggle" class="theme-color-button">
+<svg width="46" height="35" viewBox="0 0 46 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path class="theme-color-button-one" d="M0 17.5C0 7.83502 7.83502 0 17.5 0H46V35H17.5C7.83502 35 0 27.165 0 17.5Z"/>
+<path class="theme-color-button-two" d="M13.2718 22.4268C16.1834 28.9895 23.864 31.9495 30.4268 29.038C36.9895 26.1265 39.9495 18.4458 37.038 11.8831C34.1264 5.32033 26.4458 2.36034 19.883 5.27186C18.8355 5.73658 17.8798 6.32267 17.025 7.00638C17.1749 6.93057 17.328 6.85798 17.4838 6.78888C22.42 4.59897 28.1967 6.82546 30.3866 11.7616C32.5765 16.6978 30.3503 22.4744 25.4141 24.6643C20.4779 26.8542 14.7011 24.6282 12.5111 19.692C12.442 19.5362 12.3772 19.3797 12.317 19.2229C12.4919 20.3034 12.8071 21.3793 13.2718 22.4268Z" fill="white"/>
+</svg>
+
+    </button>
   </header>
   <main class="game" id="game">
     <p class="story" id="story"></p>
@@ -52,8 +62,8 @@
   
     </div>
     </section>
-<button id="scrollDownBtn" title="Прокрутить вниз">
-  <svg width="16" height="37" viewBox="0 0 16 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<button class="fuck" id="scrollDownBtn" title="Прокрутить вниз">
+  <svg class="fuck" width="16" height="37" viewBox="0 0 16 37" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path class="arrow" d="M7.29289 36.7071C7.68342 37.0976 8.31658 37.0976 8.70711 36.7071L15.0711 30.3431C15.4616 29.9526 15.4616 29.3195 15.0711 28.9289C14.6805 28.5384 14.0474 28.5384 13.6569 28.9289L8 34.5858L2.34314 28.9289C1.95262 28.5384 1.31946 28.5384 0.928931 28.9289C0.538407 29.3195 0.538406 29.9526 0.928931 30.3431L7.29289 36.7071ZM8 0L7 -4.37114e-08L7 36L8 36L9 36L9 4.37114e-08L8 0Z" fill="white"/>
 </svg>
 </button>
